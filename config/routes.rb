@@ -1,4 +1,5 @@
 Scholarify::Application.routes.draw do
+
   get "pages/home"
 
   get "pages/about"
@@ -18,6 +19,8 @@ Scholarify::Application.routes.draw do
   get "pages/blog"
 
   get "pages/support"
+
+  resources :courses
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
