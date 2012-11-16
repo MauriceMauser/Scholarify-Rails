@@ -38,4 +38,4 @@ gem 'kaminari', '0.13.0'
 
  # gem 'activeadmin'
 
-gem "mocha", :group => :test
+#gem "mocha", :group => :test
