@@ -22,6 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem "twitter-bootstrap-rails", "~> 2.0rc0"
 gem 'jquery-rails'
 gem 'omniauth-identity'
 gem 'omniauth-facebook'
