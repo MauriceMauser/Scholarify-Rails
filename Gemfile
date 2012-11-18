@@ -41,6 +41,7 @@ gem 'holder_rails'
 
 gem 'kaminari', '0.13.0'
 
+gem 'therubyracer'
 gem 'less-rails'
 gem "twitter-bootstrap-rails", "~> 2.0rc0"
  # gem 'activeadmin'
