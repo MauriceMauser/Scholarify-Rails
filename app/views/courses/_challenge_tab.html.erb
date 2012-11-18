@@ -1,0 +1,47 @@
+<div class="tab-pane active" id="lA">
+
+	<h1 style="margin-bottom:1px;">			<%= @course.title %>			</h1>
+	<h3 style="margin-top:0px;"><small>		<%= @course.company %>	</small></h3>
+	<br>
+	<div class="six columns" style="padding-left:0px;">
+		<!-- <iframe width="100%" height="300" src="http://www.youtube.com/embed/Jj3sytbH-SI" allowfullscreen
+			style="border: 4px solid #DDD; margin: 0 0 10px; max-width: 100% !important;"></iframe> -->
+		<%= @course.intro_video.html_safe %>
+	</div>
+	<div class="six columns">
+		<section class="intro">
+			<div class="row tabs">
+
+				<div class="six columns">
+	            	<h5 style="margin-top:0px; color:#646464;"><i class="icon-info-sign"></i> Company 		</h5>
+					<h5 style="color:#646464;"><i class="icon-calendar"></i> 				  Start 		</h5>
+	              	<h5 style="color:#646464;"><i class="icon-ok"></i> 		 				  Difficulty 	</h5>
+				</div>
+				<div class="six columns">
+					<h5 style="margin-top:0px; color:#646464;">	<%= @course.company %>		</h5>
+ 		            <h5 style="color:#646464;">					<%= @course.start_date %>	</h5>
+   		            <h5 style="color:#646464;">					<%= @course.difficulty %>	</h5>
+				</div>
+
+			</div>
+
+			<hr style="margin:0 0 2px;">
+
+			<p style="font-size:15px;"><%= @course.description %></p>
+
+			<div class="well well-small"><button class="btn btn-large btn-block btn-success">ENROLL</button></div>
+
+		</section>
+	</div>
+	<br>
+	<hr>
+
+	<%= render 'deadline_component' %>
+
+	<div class="four columns">
+		<h4><small>SKILLS</small></h4>
+		<h2>Required</h2>
+		<p><%= @course.requirements %></p>
+	</div>
+
+</div>

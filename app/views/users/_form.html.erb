@@ -1,0 +1,84 @@
+<%= form_for(@user) do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="two columns">
+      <p> Name </p>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="two columns">
+      <p> Email </p>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :email %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="two columns">
+      <p> Provider </p>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :provider %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="two columns">
+      <p> Image </p>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :image %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="two columns">
+      <p> Location </p>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :location %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="two columns">
+      <p> Education </p>
+    </div>
+    <div class="ten columns">
+      <%= f.text_area :education, :style => "width:100%;height:80px;" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="two columns">
+      <p> Experience </p>
+    </div>
+    <div class="ten columns">
+      <%= f.text_area :experience, :style => "width:100%;height:80px;" %>
+    </div>
+  </div>
+
+  <hr style="border: solid #fff;">
+
+  <div class="actions">
+    <div class="well well-large"><%= f.submit :class => "btn btn-large btn-block btn-success" %></div>
+  </div>
+
+<% end %>

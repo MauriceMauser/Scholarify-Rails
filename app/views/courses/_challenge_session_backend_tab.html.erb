@@ -1,0 +1,54 @@
+<%= form_for(@course) do |f| %>
+
+	<div class="row">
+		<div class="three columns">
+			<p> Start Date </p>
+		</div>
+		<div class="nine columns">
+			<%= f.text_field :start_date %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="three columns">
+			<p> End Date </p>
+		</div>
+		<div class="nine columns">
+			<%= f.text_field :end_date %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="three columns">
+			<p> Challenge Title </p>
+		</div>
+		<div class="nine columns">
+			<%= f.text_field :challenge_title %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="three columns">
+			<p> Challenge Description </p>
+		</div>
+		<div class="nine columns">
+			<%= f.text_area :challenge_description, :style => "width:100%;height:80px;" %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="three columns">
+			<p> Status </p>
+		</div>
+		<div class="nine columns">
+			<%= f.text_field :challenge_status %>
+		</div>
+	</div>
+
+	<hr style="border: solid #fff;">
+	  
+	<div class="actions">
+		<div class="well well-large"><%= f.submit :class => "btn btn-large btn-block btn-success" %></div>
+	</div>
+
+<% end %>

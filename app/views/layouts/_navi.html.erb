@@ -1,0 +1,20 @@
+<div style="background-color: #3a94b5; height: 8px;"></div>
+<div id="header-containertop" style="padding-top:5px;">
+	<div class="row" style="margin-bottom:5px;">
+		
+		<% logo = image_tag("logosmall.png", alt: "Scholarify | Online Apprenticeships") %>
+		<%= link_to logo, root_path, :style => "margin-top:7px;padding-top:5px;" %>
+
+		<div style="float:right">
+			<div class="btn-group">
+				<div class="btn">
+					Sign up
+				</div>
+				<div class="btn">
+					<%= link_to 'All Courses', courses_path %>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

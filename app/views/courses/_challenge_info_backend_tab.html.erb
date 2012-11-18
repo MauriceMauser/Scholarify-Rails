@@ -1,0 +1,72 @@
+<%= form_for(@course) do |f| %>
+
+	<div class="row">
+		<div class="two columns">
+			<p> Title </p>
+		</div>
+		<div class="ten columns">
+			<%= f.text_field :title %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="two columns">
+			<p> Company </p>
+		</div>
+		<div class="ten columns">
+			<%= f.text_field :company %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="two columns">
+			<p> Intro Video URL </p>
+		</div>
+		<div class="ten columns">
+			<%= f.text_field :intro_video %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="two columns">
+			<p> Thumbnail </p>
+		</div>
+		<div class="ten columns">
+			<%= f.text_field :thumbnail %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="two columns">
+			<p> Course Description </p>
+		</div>
+		<div class="ten columns">
+			<%= f.text_area :description, :style => "width:100%;height:80px;" %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="two columns">
+			<p> Difficulty </p>
+		</div>
+		<div class="ten columns">
+			<%= f.text_field :difficulty %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="two columns">
+			<p> Requirements </p>
+		</div>
+		<div class="ten columns">
+			<%= f.text_area :requirements, :style => "width:100%;height:80px;" %>
+		</div>
+	</div>
+
+	<hr style="border: solid #fff;">
+
+	<div class="actions">
+		<div class="well well-large"><%= f.submit :class => "btn btn-large btn-block btn-success" %></div>
+	</div>
+
+<% end %>

@@ -1,0 +1,70 @@
+<section id="bigbar">
+	<div class="row">
+		<nav class="bar-tab">
+
+			<ul class="tab-inner">
+
+				<li class="tab-item active">
+					<a href="#lA" data-toggle="tab">
+						<%= image_tag "courses.png", :class => "tab-icon" %>
+						<div class="tab-label">Challenge</div>
+					</a>
+				</li>
+
+				<li class="tab-item">
+					<a href="#lB" data-toggle="tab">
+						<%= image_tag "materials.png", :class => "tab-icon" %>							
+						<div class="tab-label">Materials</div>
+					</a>
+				</li>
+
+				<li class="tab-item">
+					<a href="#lC" data-toggle="tab">
+						<%= image_tag "feedback.png", :class => "tab-icon" %>						
+						<div class="tab-label">Feedback</div>
+					</a>
+				</li>
+
+				<li class="tab-item">
+					<a href="#lD" data-toggle="tab">
+						<%= image_tag "questions.png", :class => "tab-icon" %>						
+						<div class="tab-label">Questions</div>
+					</a>
+				</li>
+
+				<li class="tab-item">
+					<a href="#lE" data-toggle="tab">
+						<%= image_tag "forums.png", :class => "tab-icon" %>							
+						<div class="tab-label">Forums</div>
+					</a>
+				</li>
+
+			</ul>
+
+		</nav>
+	</div>
+</section>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="card" style="min-height:700px;">
+			<div class="row">
+				<div class="twelve columns">
+
+					<div class="tab-content">
+
+						<%= render 'challenge_tab' 	%>
+						<%= render 'materials_tab' 	%>
+						<%= render 'feedback_tab' 	%>
+						<%= render 'questions_tab' 	%>
+						<%= render 'forums_tab' 	%>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

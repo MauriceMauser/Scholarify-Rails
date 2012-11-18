@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		<div class="card" style="min-height:900px;">
+
+			<h2>Our Courses</h2>
+			
+			<hr>
+
+			<% @courses.each do |course| %>
+				<div class="well">
+					<div class="row">
+						<div class="six columns">
+							<div class="main img"><%= image_tag(course.thumbnail) %></div>
+						</div>
+						<div class="six columns">
+							<h4 style="margin-top:0px;margin-bottom:2px;"><%= course.title %></h4>
+							<h4 style="margin-top:0px;">
+								<small><%= course.company %> | <%= course.start_date %> | <span class="label label-success"><%= course.difficulty %></span>
+								</small> 
+							</h4>
+							<p><%= course.description %></p>
+
+							<%= link_to "Go To Apprenticeship", course, :class => "btn btn-success", :style => "margin-bottom:16px;margin-top:3px;font-weight:bold;" %>
+
+							<td><%= link_to "Show", course %></td>
+							<td><%= link_to "Edit", edit_course_path(course) %></td>
+							<td><%= link_to "Destroy", course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+						</div>
+					</div>
+				</div>
+			<% end %>
+
+			<br />
+
+			<div class="well well-large">
+				<%= link_to 'Create Course', new_course_path, :class => "btn btn-large btn-block btn-info", :style => "font-weight:bold;" %>
+			</div>
+
+		</div>
+	</div>
+</div>
