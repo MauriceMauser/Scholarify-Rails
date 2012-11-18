@@ -22,7 +22,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem "twitter-bootstrap-rails", "~> 2.0rc0"
 gem 'jquery-rails'
 gem 'omniauth-identity'
 gem 'omniauth-facebook'
@@ -42,6 +41,8 @@ gem 'holder_rails'
 
 gem 'kaminari', '0.13.0'
 
+gem 'less-rails'
+gem "twitter-bootstrap-rails", "~> 2.0rc0"
  # gem 'activeadmin'
 
 #gem "mocha", :group => :test
