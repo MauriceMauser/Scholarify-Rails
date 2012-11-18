@@ -1,9 +1,20 @@
 <%= form_for(@course) do |f| %>
 
-	<p>MATERIALS</p>
+	<% if @course.errors.any? %>
+		<div id="error_explanation">
+	      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+		      <ul>
+		      	<% @course.errors.full_messages.each do |msg| %>
+		        	<li><%= msg %></li>
+		      	<% end %>
+		      </ul>
+	    </div>
+	<% end %>
 
+	<h2>Course Materials</h2>
+	<%= f.text_area :material, :id => "redactor-content" %>
+	
 	<hr style="border: solid #fff;">
-	  
 	<div class="actions">
 		<div class="well well-large"><%= f.submit :class => "btn btn-large btn-block btn-success" %></div>
 	</div>
