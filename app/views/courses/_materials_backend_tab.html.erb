@@ -12,8 +12,12 @@
 	<% end %>
 
 	<h2>Course Materials</h2>
-	<%= f.text_area :material, :id => "redactor-content" %>
-	
+	<%= f.text_area :material, :id => "redactor_content", :style => "width:100%; height:200px;" %>
+
+	<script type="text/javascript">
+		$(function(){ $('#redactor_content').redactor({ fixed: true }); });
+	</script>
+
 	<hr style="border: solid #fff;">
 	<div class="actions">
 		<div class="well well-large"><%= f.submit :class => "btn btn-large btn-block btn-success" %></div>

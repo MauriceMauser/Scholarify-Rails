@@ -1,5 +1,33 @@
 <div class="tab-pane" id="lC">
 
-	<p>Feedback</p>
+	<h4><small><%= @course.title %></small></h4>
+	<h2>Peer Feedback</h2>
+
+	<ul class="nav nav-pills" id="myTab">
+		<li><a href="#yoursubmissions" data-toggle="tab"> Your Submissions </a></li>
+		<li><a href="#allsubmissions" data-toggle="tab"> All Submissions </a></li>
+	</ul>
+
+	<hr>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="card" style="min-height:700px;">
+				<div class="row">
+					<div class="twelve columns">
+
+						<div class="tab-content">
+
+							<%= render 'yoursubmissions_tab' 	%>
+							<%= render 'allsubmissions_tab' 	%>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
