@@ -1,0 +1,6 @@
+<p>
+	<%= f.label :content, "Assignment Task" %> <br />
+	<%= f.text_area :content, :rows => 3 %> <br />
+	<%= f.hidden_field :_destroy %>
+	<%= link_to_remove_fields "remove", f %>
+</p>

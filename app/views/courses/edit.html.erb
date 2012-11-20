@@ -6,6 +6,12 @@
 
 			<%= render 'backend_form' %>
 
+			<div class="form-actions">
+				<%= link_to 'Show Course', @course, :class => 'btn' %>
+				<%= link_to 'All Courses', courses_path, :class => 'btn', :style => "float:right;" %>
+				<%= link_to 'Delete Course', courses_path, :class => 'btn btn-danger', :data => { confirm: "Are you sure?" } %>
+			</div>
+
 		</div>
 	</div>
 </div>

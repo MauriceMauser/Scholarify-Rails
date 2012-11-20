@@ -1,5 +1,16 @@
 <div class="tab-pane" id="lD">
+	
+	<ol>
+	<% for question in @course.questions %>
+		<li><%= question.content %></li>
 
-	<p>Questions</p>
+		<ul>
+		<% for answer in question.answers %>
+			<li><%= answer.content %></li>
+		<% end %>
+		</ul>
+
+	<% end %>
+	</ol>
 
 </div>

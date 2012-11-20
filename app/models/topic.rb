@@ -1,0 +1,5 @@
+class Topic < ActiveRecord::Base
+  attr_accessible :content, :course_id, :title
+  belongs_to :course
+  
+end

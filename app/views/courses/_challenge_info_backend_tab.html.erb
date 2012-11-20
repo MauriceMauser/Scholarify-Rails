@@ -1,64 +1,76 @@
 <%= form_for(@course) do |f| %>
 
+	<% if @course.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+	      <ul>
+	      <% @course.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+ 	<% end %>
+
 	<div class="row">
-		<div class="two columns">
-			<p> Title </p>
+		<div class="three columns">
+			<p style="font-size:15px;"><i class="icon-info-sign" style="vertical-align:0;"></i> Title </p>
 		</div>
-		<div class="ten columns">
+		<div class="nine columns">
 			<%= f.text_field :title %>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="two columns">
-			<p> Company </p>
+		<div class="three columns">
+			<p style="font-size:15px;"><i class="icon-user" style="vertical-align:0;"></i> Company </p>
 		</div>
-		<div class="ten columns">
+		<div class="nine columns">
 			<%= f.text_field :company %>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="two columns">
-			<p> Intro Video URL </p>
+		<div class="three columns">
+			<p style="font-size:15px;"><i class="icon-film" style="vertical-align:0;"></i> Intro Video URL </p>
 		</div>
-		<div class="ten columns">
+		<div class="nine columns">
 			<%= f.text_field :intro_video %>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="two columns">
-			<p> Thumbnail </p>
+		<div class="three columns">
+			<p style="font-size:15px;"><i class="icon-film" style="vertical-align:0;"></i> Thumbnail </p>
 		</div>
-		<div class="ten columns">
+		<div class="nine columns">
 			<%= f.text_field :thumbnail %>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="two columns">
-			<p> Course Description </p>
+		<div class="three columns">
+			<p style="font-size:15px;"><i class="icon-list" style="vertical-align:0;"></i> Course Description </p>
 		</div>
-		<div class="ten columns">
-			<%= f.text_area :description, :style => "width:100%;height:80px;" %>
+		<div class="nine columns">
+			<%= f.text_area :description, :style => "width:100%;height:250px;" %>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="two columns">
-			<p> Difficulty </p>
+		<div class="three columns">
+			<p style="font-size:15px;"><i class="icon-ok-circle" style="vertical-align:0;"></i> Difficulty </p>
 		</div>
-		<div class="ten columns">
+		<div class="nine columns">
 			<%= f.text_field :difficulty %>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="two columns">
-			<p> Requirements </p>
+		<div class="three columns">
+			<p style="font-size:15px;"><i class="icon-list" style="vertical-align:0;"></i> Requirements </p>
 		</div>
-		<div class="ten columns">
+		<div class="nine columns">
 			<%= f.text_area :requirements, :style => "width:100%;height:80px;" %>
 		</div>
 	</div>
