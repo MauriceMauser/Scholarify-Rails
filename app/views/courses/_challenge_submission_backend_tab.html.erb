@@ -11,10 +11,10 @@
     </div>
 	<% end %>
 
-	<%= f.fields_for :assignment_tasks do |builder| %>
-		<%= render 'assignment_task_fields', :f => builder %>
+	<%= f.fields_for :assignmenttasks do |builder| %>
+		<%= render 'assignmenttask_fields', :f => builder %>
 	<% end %>
-	<p><%= link_to_add_fields "Add Assignment Task", f, :assignment_tasks %></p>
+	<p><%= link_to_add_fields "Add Assignment Task", f, :assignmenttasks %></p>
 
 	<hr style="border: solid #fff;">
 

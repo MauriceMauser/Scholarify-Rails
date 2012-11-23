@@ -1,0 +1,42 @@
+<div class="container">
+
+	<div class="card">
+
+		<div class="row" style="min-height:1000px;">
+
+			<h4>Our Apprenticeships</h4>
+			<hr>
+
+
+
+			<% @courses.each do |course| %>
+
+				<div class="cardblock" style="float:left;">
+
+					<div class="front"> 
+
+						<!-- <img src="http://placehold.it/280x170"> -->
+
+						<%= image_tag(course.thumbnail) %>
+						<div class="meta-info">
+							<p class="company"><%= course.company %></p>
+						</div>
+						<h4><%= link_to course.title, course %></h4>
+						 <br>
+
+						 <p style="font-size:13px;"><%= truncate(course.description, :length => 65, :omission => '...') %></p>
+
+
+					</div>
+
+				</div>
+
+			<% end %>
+
+			<hr>
+
+		</div>
+
+	</div>
+
+</div>
