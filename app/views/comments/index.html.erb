@@ -1,0 +1,17 @@
+<div class="container">
+
+	<div class="row">
+
+		<div class="card" style="min-height:700px;">
+
+			<h5>All Comments</h5>
+			<hr>
+
+			<%= render 'comments' %>
+			<p><%= link_to "New Comment", [:new, @commentable, :comment] %></p>
+
+		</div>
+
+	</div>
+
+</div>
