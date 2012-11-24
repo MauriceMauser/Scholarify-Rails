@@ -13,6 +13,12 @@
 
 					<p><%= topic.content %></p>
 
+					<p style="float:right;">
+				<%= link_to "Show", topic %> | 
+				<%= link_to "Edit", edit_topic_path(topic) %> | 
+				<%= link_to "Destroy", topic, :confirm => "Are you sure?", :method => :delete %>
+					</p>
+
 				</div>
 
 			<% end %>
