@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
 	def index
-		@topics = Topic.all?
+		@topics = Topic.all
 	end
 
 	def new
@@ -25,7 +25,12 @@ class TopicsController < ApplicationController
 	end
 
 	def update
-
+		@topic = Topic.find(params[:id])
+		if @topic.update_attributes(params[:topic])
+			redirect_to @topic, :notice => "Successfully updated topic."
+		else
+			render :action => 'edit'
+		end
 	end
 
 	def destroy
