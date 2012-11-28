@@ -10,6 +10,23 @@
 
 <%= render "layouts/navi" %>
 
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+		<h3 id="myModalLabel">Login to Scholarify</h3>
+	</div>
+	<div class="modal-body">
+		<center>
+			<%= link_to "Sign in with Facebook", "/auth/facebook", :class => "btn btn-large btn-info" %>
+			<p>or</p>
+			<%= link_to "Sign in with Twitter", "/auth/twitter", :class => "btn btn-large btn-info" %>
+		</center>
+	</div>
+</div>
+
+
 <%= yield %>
 
 <%= render "layouts/footer" %>
