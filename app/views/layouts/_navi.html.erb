@@ -23,6 +23,11 @@
 					<ul class="dropdown-menu">
 						<li><%= link_to "My Courses", main_app.courses_path %></li>
 
+						<% if current_user %>
+							<hr style="margin:0px;">
+							<li><%= link_to "My Profile", main_app.show_user_path(current_user) %></li>
+						<% end %>
+
 						<hr style="margin:0px;">
 						<li><%= link_to "Sign out", main_app.signout_path %></li>
 

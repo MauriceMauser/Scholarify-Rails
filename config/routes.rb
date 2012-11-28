@@ -1,5 +1,7 @@
 Scholarify::Application.routes.draw do
 
+  root :to => 'store#index'
+
   resources :users
 
   resources :courses
@@ -7,8 +9,6 @@ Scholarify::Application.routes.draw do
   resources :topics do
     resources :comments
   end
-
-  root :to => 'store#index'
 
   get "pages/home"
 

@@ -1,5 +1,6 @@
 OmniAuth.config.logger = Rails.logger
-OmniAuth.config.full_host = "http://scholarify.herokuapp.com" 
+OmniAuth.config.full_host = "http://scholarify.herokuapp.com"
+
 Rails.application.config.middleware.use OmniAuth::Builder do 
 	#  provider :developer unless Rails.env.production?
 	provider :twitter, "hXvbkQKcoQflrt1Q0ksEg", "WGNwjprau7RgY2Lt6JXkBtpFgfgaUEBMrIbNLn6oo"
