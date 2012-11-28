@@ -25,7 +25,7 @@
 
 						<% if current_user %>
 							<hr style="margin:0px;">
-							<li><%= link_to "My Profile", main_app.show_user_path(current_user) %></li>
+							<li><%= link_to "My Profile", main_app.user_path(current_user) %></li>
 						<% end %>
 
 						<hr style="margin:0px;">
