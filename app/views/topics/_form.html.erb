@@ -1,5 +1,9 @@
 <%= form_for(@topic) do |f| %>
 
+	<% if params[:course] %>
+		<input type="hidden" id="topic_course_id" name="topic[course_id]" value="<%= params[:course] %>">
+	<% end %>
+
 	<p>Title</p>
 	<%= f.text_field :title %>
 
