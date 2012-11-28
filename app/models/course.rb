@@ -12,7 +12,6 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :review_questions, :allow_destroy => true
 
   has_many :topics, :dependent => :destroy
-  accepts_nested_attributes_for :topics
 
 end
 

@@ -2,6 +2,14 @@ Scholarify::Application.routes.draw do
 
   resources :users
 
+  resources :courses
+
+  resources :topics do
+    resources :comments
+  end
+
+  root :to => 'store#index'
+
   get "pages/home"
 
   get "pages/about"
@@ -21,13 +29,5 @@ Scholarify::Application.routes.draw do
   get "pages/blog"
 
   get "pages/support"
-
-  resources :courses
-
-  resources :topics do
-    resources :comments
-  end
-
-  root :to => 'store#index'
 
 end
