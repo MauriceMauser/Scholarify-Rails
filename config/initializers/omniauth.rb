@@ -3,7 +3,7 @@ OmniAuth.config.full_host = "http://scholarify.herokuapp.com"
 Rails.application.config.middleware.use OmniAuth::Builder do 
 	#  provider :developer unless Rails.env.production?
 	provider :twitter, "hXvbkQKcoQflrt1Q0ksEg", "WGNwjprau7RgY2Lt6JXkBtpFgfgaUEBMrIbNLn6oo"
-	provider :facebook, "304268092978090", "182ded3f9e5fca41b30b0d233395e645", :display => "popup"
+	provider :facebook, "390169657710370", "737d5c68161956ac9e37af4aa1a3b308", :display => "popup"
 end
 
 
