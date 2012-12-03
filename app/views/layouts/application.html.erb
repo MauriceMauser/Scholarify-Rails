@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<!--  Flash -->
+<div class="row">
+<center>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, :id => "flash_#{name}" do %>
+    <%= msg %>
+    <%= content_tag :span, :style => "float: right;" do %>
+      <%= link_to_function image_tag('/assets/cross.png'), 
+      :onclick => "document.getElementById('flash_#{name}').style.display='none'" %>
+    <% end %>
+  <% end %>
+<% end %>
+</center>
+</div>
 
 <%= render "layouts/navi" %>
 

@@ -10,6 +10,8 @@ Scholarify::Application.routes.draw do
     resources :comments
   end
 
+  match 'enroll', to: 'enrollments#create', as: 'enrollment'
+
   get "pages/home"
 
   get "pages/about"

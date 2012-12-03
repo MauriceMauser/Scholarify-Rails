@@ -29,7 +29,9 @@
 
 			<p style="font-size:15px;"><%= @course.description %></p>
 
-			<div class="well well-small"><button class="btn btn-large btn-block btn-success">ENROLL</button></div>
+			<div class="well well-small">
+				<%= link_to "ENROLL", "/enroll?course=#{@course.id}", :method => :post, :class => "btn btn-large btn-block btn-success" %>
+			</div>
 
 		</section>
 	</div>

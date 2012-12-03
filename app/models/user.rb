@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :uid, :cv, :education, :email, :experience, :image, :location, :name, :provider
+  attr_accessible :uid, :cv, :education, :email, :experience, :image, :location, :name, :provider, :enrollments_attributes
+
+  has_many :enrollments
+  has_many :courses, :through => :enrollments
 
   def self.from_omniauth(auth)
   	logger.debug "============================================"
