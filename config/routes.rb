@@ -32,6 +32,8 @@ Scholarify::Application.routes.draw do
 
   get "pages/support"
 
+  get "enrollments"
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
