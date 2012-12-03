@@ -32,7 +32,7 @@ Scholarify::Application.routes.draw do
 
   get "pages/support"
 
-  get "enrollments"
+  get "enrollments/index"
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
