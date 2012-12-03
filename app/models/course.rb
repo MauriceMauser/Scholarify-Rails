@@ -1,7 +1,7 @@
 class Course < ActiveRecord::Base
   attr_accessible :title, :company, :intro_video, :thumbnail, :description, :difficulty, :requirements, 
   :start_date, :end_date, :challenge_title, :challenge_description, :challenge_status, :material, 
-  :questions_attributes, :assignmenttasks_attributes, :review_questions_attributes
+  :questions_attributes, :assignmenttasks_attributes, :review_questions_attributes, :enrollments_attributes
 
   has_many :questions, :dependent => :destroy
   accepts_nested_attributes_for :questions, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
