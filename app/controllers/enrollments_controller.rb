@@ -8,7 +8,11 @@ class EnrollmentsController < ApplicationController
 			@course = Course.find(course_id)
 			@enrollment = Enrollment.new({ :course_id => course_id, :user_id => user_id })
 
-			redirect_to course_path(params[:course]), notice: "Successfully enrolled in course!"
+			if @enrollment.save
+				redirect_to course_path(params[:course]), notice: "Successfully enrolled in course!"
+			else
+				redirect_to course_path(params[:course]), notice: "Enrollment failed!"
+			end
 		else
 			redirect_to course_path(params[:course]), notice: "Login first!"
 		end
