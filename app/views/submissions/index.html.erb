@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+		<div class="card"  style="min-height:700px;">
+			<h1>Submissions <small>for course</small></h1>
+			<hr>
+	<div class="well">
+	  <% @submissions.each do |submission| %>
+	    
+	      <p><%= submission.content %></p>
+	    
+	  <% end %>
+	  <%= link_to "New Submission", [:new, @submittable, :submission], :class =>"btn" %>
+
+	</div>
+	</div>
+</div>
