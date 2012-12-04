@@ -14,8 +14,8 @@ class SubmissionsController < ApplicationController
 
 		@submission = @submittable.submissions.new(params[:submission])
 
-		if current_user
-			@user = current_user
+		if @current_user
+			@user = @current_user
 			user_id = @user.id
 
 			@submission.user_id = user_id

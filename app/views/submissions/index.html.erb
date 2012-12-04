@@ -7,7 +7,7 @@
 	  <% @submissions.each do |submission| %>
 	    
 	      <p><%= submission.content %></p>
-	      <p><%= @submission.user_id %></p>
+	      <p><%= submission.user_id %></p>
 	    
 	  <% end %>
 	  <%= link_to "New Submission", [:new, @submittable, :submission], :class =>"btn" %>
