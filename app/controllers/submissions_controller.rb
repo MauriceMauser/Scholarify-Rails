@@ -14,8 +14,8 @@ class SubmissionsController < ApplicationController
 
 		@submission = @submittable.submissions.new(params[:submission])
 
-		if @current_user
-			@user = @current_user
+		if current_user
+			@user = current_user
 			user_id = @user.id
 
 			@submission.user_id = user_id
@@ -44,20 +44,3 @@ class SubmissionsController < ApplicationController
 	end
 
 end
-
-
-if current_user
-			@user = current_user
-			user_id = @user.id
-			course_id = params[:course]
-			@course = Course.find(course_id)
-			@enrollment = Enrollment.new({ :course_id => course_id, :user_id => user_id })
-
-			if @enrollment.save
-				redirect_to course_path(params[:course]), notice: "Successfully enrolled in course!"
-			else
-				redirect_to course_path(params[:course]), notice: "Enrollment failed!"
-			end
-		else
-			redirect_to course_path(params[:course]), notice: "Login first!"
-		end
