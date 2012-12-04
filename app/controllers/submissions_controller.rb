@@ -11,11 +11,23 @@ class SubmissionsController < ApplicationController
 	end
 
 	def create
+
 		@submission = @submittable.submissions.new(params[:submission])
-		if @submission.save
-			redirect_to [@submittable, :submissions], notice: "Submission created."
+
+		if current_user
+			@user = current_user
+			user_id = @user.id
+
+			@submission.user_id = user_id
+
+			if @submission.save
+				redirect_to [@submittable, :submissions], notice: "Submission created."
+			else
+				render :new
+			end
+
 		else
-			render :new
+			render :new, notice: "Please login first."
 		end
 	end
 
@@ -32,3 +44,20 @@ class SubmissionsController < ApplicationController
 	end
 
 end
+
+
+if current_user
+			@user = current_user
+			user_id = @user.id
+			course_id = params[:course]
+			@course = Course.find(course_id)
+			@enrollment = Enrollment.new({ :course_id => course_id, :user_id => user_id })
+
+			if @enrollment.save
+				redirect_to course_path(params[:course]), notice: "Successfully enrolled in course!"
+			else
+				redirect_to course_path(params[:course]), notice: "Enrollment failed!"
+			end
+		else
+			redirect_to course_path(params[:course]), notice: "Login first!"
+		end

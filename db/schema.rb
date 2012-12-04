@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20121204104500) do
+ActiveRecord::Schema.define(:version => 20121204160819) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -82,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20121204104500) do
     t.string   "submittable_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "user_id"
   end
 
   add_index "submissions", ["submittable_id", "submittable_type"], :name => "index_submissions_on_submittable_id_and_submittable_type"
