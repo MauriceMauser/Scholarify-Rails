@@ -48,6 +48,10 @@ class CoursesController < ApplicationController
   def show
   	@course = Course.find(params[:id])
 
+    @submittable = @course
+    @submissions = @submittable.submissions
+    @submission = Submission.new
+
   	respond_to do |format|
   		format.html #show.html.erb
   		format.json { render json: @course }

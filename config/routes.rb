@@ -4,7 +4,9 @@ Scholarify::Application.routes.draw do
 
   resources :users
 
-  resources :courses
+  resources :courses do
+    resources :submissions
+  end
 
   resources :topics do
     resources :comments
