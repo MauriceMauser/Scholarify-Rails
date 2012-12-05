@@ -1,5 +1,26 @@
 <div class="eight columns well">
 	<h5 style="color:#646464;"><%= @course.challenge_title %> | Deadline: <%= @course.end_date %></h5>
 	<p><%= @course.challenge_description %></p>	
-	<button class="btn btn-block btn-info">SUBMIT SOLUTION</button>
+	
+	<div class="well well-small">
+		<a href="#mySubmission" role="button" class="btn btn-block btn-info" data-toggle="modal">SUBMIT SOLUTION</a>
+	</div>
+
+</div>
+
+
+<!-- Modal -->
+<div id="mySubmission" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+		<h3 id="myModalLabel">Submit Your Answer</h3>
+	</div>
+
+	<div class="modal-body">
+		<center>
+			<div class="well">
+				<%= render "submissions/form" %>
+			</div>
+		</center>
+	</div>
 </div>
