@@ -49,8 +49,18 @@ class CoursesController < ApplicationController
   	@course = Course.find(params[:id])
 
     @submittable = @course
-    @submissions = @submittable.submissions
-    @submission = Submission.new
+    #@submissions = @submittable.submissions
+    #@submission = Submission.new
+
+
+      @tasks = @submittable.assignmenttasks
+      @submission = @submittable.submissions.new
+      @submissionitems = @submission.submissionitems
+      @tasks.each do |task|
+        submissionitem = @submissionitems.build(:title => task.title, :description => task.content, :assignmenttask_id => task.id)
+        @assignmenttask = Assignmenttask.find(submissionitem.assignmenttask_id)
+      end
+
 
   	respond_to do |format|
   		format.html #show.html.erb

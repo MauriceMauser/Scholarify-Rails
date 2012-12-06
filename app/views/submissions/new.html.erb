@@ -3,7 +3,7 @@
 		<div class="card" style="min-height:700px;">
 			<h2>New Submission</h2>
 			<hr>
-			<div class="well">
+			
 				<%= form_for [@submittable, @submission] do |f| %>
 					<% if @submission.errors.any? %>
 						<div class="error_messages">
@@ -19,7 +19,7 @@
 					<%= render "form" %>
 
 				<% end %>	
-			</div>
+		
 
 		</div>
 	</div>

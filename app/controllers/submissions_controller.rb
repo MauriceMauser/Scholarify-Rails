@@ -7,13 +7,42 @@ class SubmissionsController < ApplicationController
 	end
 
 	def new
+		
+		@tasks = @submittable.assignmenttasks
+
 		@submission = @submittable.submissions.new
+		@submissionitems = @submission.submissionitems
+
+		@tasks.each do |task|
+			#submissionitem = @submission.submissionitems.build(:title => task.title, :description => task.content, :assignmenttask_id => task.id)
+		
+			#@task = Assignmenttask.find(task.id)
+			#@task.submissionitem = submissionitem
+
+			submissionitem = @submissionitems.build(:title => task.title, :description => task.content, :assignmenttask_id => task.id)
+		
+			@assignmenttask = Assignmenttask.find(submissionitem.assignmenttask_id)
+		end
+
+		#@submissionitem = Submissionitem.find(params[:id])
+		#@assignmenttask = Assignmenttask.find(submissionitem.assignmenttask_id)
+		#@assignmenttask = @tasks.submissionitems.
+
 	end
 
 	def create
 
 		@submission = @submittable.submissions.new(params[:submission])
 
+
+		      @tasks = @submittable.assignmenttasks
+		      @submission = @submittable.submissions.new
+		      @submissionitems = @submission.submissionitems
+		      @tasks.each do |task|
+		        submissionitem = @submissionitems.build(:title => task.title, :description => task.content, :assignmenttask_id => task.id)
+		        @assignmenttask = Assignmenttask.find(submissionitem.assignmenttask_id)
+		      end
+		      
 		if current_user
 			@user = current_user
 			user_id = @user.id

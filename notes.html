@@ -1,0 +1,31 @@
+ <div class="twelve columns">
+    <% @tasks.each do |task| %>
+    <div class="well">
+      <h4><%= task.title %></h4>
+      <p><%= task.content %></p>
+
+      <div class="row">
+        <%= f.fields_for @task.submissionitem do |builder| %>
+          <%= render 'submissionitem_fields', :f => builder %>
+        <% end %>
+      </div>
+
+    </div>
+    <% end %>
+  </div>
+
+
+
+   <div class="row">
+        <%= f.fields_for @submissionitems do |builder| %>
+          <%= render 'submissionitem_fields', :f => builder %>
+        <% end %>
+    </div>
+
+
+     <%= f.fields_for @submissionitems do |builder| %>
+    <%= render 'submissionitem_fields', :f => builder %>
+  <% end %>
+
+        <input id="submissionitem_input" name="submissionitem[input]" size="30" type="text" />
+
